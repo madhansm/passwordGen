@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //array of characters
+      const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const specialCharacters = ["!", "@", "#", "$", "*"];
+      const lower = "abcdefghijklmnopqrstuvwxyz";
+      const upper = "ABCDEFGHIJIKLMNOPQRSTUVWXYZ";
+
+      let numericChars, specialChars, lowerChars, upperChars;
+
+      //lets say all confirm Numeric, special char, lower and uppercase variables are true
+
+      if (true) {
+        specialChars =
+          specialCharacters[
+            Math.floor(Math.random() * specialCharacters.length)
+          ];
+        console.log(specialChars); //will return only one character (eg., $)
+      }
+
+      //same goes for all other variables numericChars, lowerChars, upperChars
+      //you will have only one character in each of the above variables
+      // lets say
+      specialChars = "$";
+      numericChars = 5;
+      lowerChars = "a";
+      upperChars = "G";
+
+      //when you assign these characters to the below variable, you'll get
+      let passwordCharacters =
+        numericChars + specialChars + lowerChars + upperChars;
+      console.log(passwordCharacters);
+
+      let yourPassword = "";
+      //so when you try to run a for loop for say 10 chars with passwordCharacters as base, of course you'll get the characters in that variable only.because you have not included the whole array of characters anywhere
+
+      for (let i = 0; i < 10; i++) {
+        yourPassword =
+          yourPassword +
+          passwordCharacters[
+            Math.floor(Math.random() * passwordCharacters.length)
+          ];
+        console.log(yourPassword);
+      }
+
+      //but when you include the whole array of characters declared at the beginning of the code, you'll get the whole bunch of characters to shuffle through
+
+      //replace passwordCharacters
+      //when the user confirms what set of chars he want,
+      // lets say he wants only lower and numeric
+      //you figure out how to add array elements together based on what the user wants
+
+      passwordCharacters = number.concat([...lower]);
+      console.log(passwordCharacters);
+
+      //now when you run the for loop on passwordCharacters, you'll get your desired output
+      yourPassword = ""; //reset the var
+      for (let i = 0; i < 10; i++) {
+        yourPassword =
+          yourPassword +
+          passwordCharacters[
+            Math.floor(Math.random() * passwordCharacters.length)
+          ];
+        console.log(yourPassword);
+      }
+    </script>
+  </body>
+</html>
